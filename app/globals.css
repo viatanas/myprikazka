@@ -1,26 +1,385 @@
-@import "tailwindcss";
+/* BW Surco Font */
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-Book.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-BookItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-Regular.otf") format("opentype");
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-RegularItalic.otf") format("opentype");
+  font-weight: 450;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BW Surco";
+  src: url("/fonts/bw-surco/BwSurcoDEMO-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-sunshine: #ffd93d;
+  --color-coral: #ff6b6b;
+  --color-mint: #6bcb77;
+  --color-sky: #4d96ff;
+  --color-lavender: #c9b1ff;
+  --color-cream: #fff8e7;
+  --color-peach: #ffe5d9;
+  --color-text: #2d3436;
+  --color-text-light: #636e72;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "BW Surco", system-ui, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+/* Playful blob animations */
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  75% {
+    transform: translate(30px, 10px) scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Decorative elements */
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.7;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-coral), #074fb5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button styles */
+.btn-primary {
+  background: #074fb5;
+  color: white;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  transition: opacity 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1.125rem;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--color-text);
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid var(--color-lavender);
+  cursor: pointer;
+  font-size: 1.125rem;
+}
+
+.btn-secondary:hover {
+  background: #074fb5;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Form styles */
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e8e8e8;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  outline: none;
+  border-color: #074fb5;
+  box-shadow: 0 0 0 4px rgba(7, 79, 181, 0.1);
+}
+
+/* Radio button styles */
+.radio-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e8e8e8;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.radio-card:hover {
+  border-color: #074fb5;
+}
+
+.radio-card.selected {
+  border-color: #074fb5;
+  background: rgba(7, 79, 181, 0.05);
+}
+
+/* File upload styles */
+.file-upload {
+  border: 1.5px dashed #074fb5;
+  border-radius: 20px;
+  padding: 4rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload:hover {
+  border-color: #063d91;
+  background: rgba(7, 79, 181, 0.1);
+}
+
+/* Section decorations */
+.section-decoration {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Wave separator */
+.wave-separator {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-separator svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+/* Stars decoration */
+.star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--color-sunshine);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
 }
