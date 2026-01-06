@@ -21,6 +21,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Как работи", sectionId: "how-it-works" },
+    { label: "За книжката", sectionId: "book-preview" },
     { label: "Въпроси и отговори", sectionId: "order-form" },
   ];
 
@@ -52,7 +53,7 @@ export default function Navbar() {
               <button
                 key={link.sectionId}
                 onClick={() => scrollToSection(link.sectionId)}
-                className="text-black hover:text-black/70 font-medium transition-colors relative group"
+                className="text-black hover:text-black/90 font-medium transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#074FB5] transition-all duration-300 group-hover:w-full" />

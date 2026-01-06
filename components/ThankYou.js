@@ -2,7 +2,7 @@
 
 export default function ThankYou() {
   return (
-    <section className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-cream via-peach/50 to-lavender/30">
+    <section className="fixed inset-0 z-50 flex items-center justify-center bg-[#F8F5EE]">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-40 h-40 bg-sunshine/30 rounded-full blur-3xl animate-blob" />
@@ -10,29 +10,44 @@ export default function ThankYou() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[#074FB5]/10 rounded-full blur-3xl animate-blob animation-delay-4000" />
       </div>
 
-      {/* Floating confetti */}
-      {[...Array(12)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute text-2xl animate-float"
-          style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animationDelay: `${i * 0.3}s`,
-            opacity: 0.7
-          }}
-        >
-          {['🎉', '✨', '🌟', '💫', '🎊', '⭐'][i % 6]}
-        </div>
-      ))}
+      {/* Floating decorations */}
+      <div className="absolute top-32 right-10 text-4xl  opacity-70">
+        <img className="w-9" src="/img/smiley.png" />
+      </div>
+      <div className="absolute top-96 right-24 text-4xl  opacity-70">
+        <img className="w-9" src="/img/star.png" />
+      </div>
+      <div className="absolute top-64 right-40 text-4xl opacity-70">
+        <img className="w-9" src="/img/smiley.png" />
+      </div>
+
+      <div className="absolute bottom-32 left-10 text-3xl   opacity-70">
+        <img className="w-9" src="/img/star.png" />
+      </div>
+      <div className="absolute bottom-96 left-24 text-3xl   opacity-70">
+        <img className="w-9" src="/img/star.png" />
+      </div>
+      <div className="absolute bottom-64 left-40 text-3xl  opacity-70">
+        <img className="w-8" src="/img/smiley.png" />
+      </div>
 
       <div className="relative z-10 max-w-lg mx-auto px-6 text-center">
         {/* Success animation */}
         <div className="mb-8 animate-bounce-gentle">
           <div className="w-32 h-32 mx-auto bg-mint/20 rounded-full flex items-center justify-center">
             <div className="w-24 h-24 bg-mint rounded-full flex items-center justify-center shadow-lg">
-              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+              <svg
+                className="w-12 h-12 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={3}
+                  d="M5 13l4 4L19 7"
+                />
               </svg>
             </div>
           </div>
@@ -40,14 +55,15 @@ export default function ThankYou() {
 
         {/* Headline */}
         <h1 className="text-4xl md:text-5xl font-black text-gray-800 mb-6">
-          <span className="text-coral">Благодарим</span> ти! 🎉
+          Благодарим ти! 🎉
         </h1>
 
         {/* Message */}
         <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-          В момента подготвяме първите персонализирани книжки. 
+          В момента подготвяме първите персонализирани книжки.
           <br className="hidden md:block" />
-          Ще се свържем с теб по имейл <span className="text-[#074FB5] font-semibold">съвсем скоро</span>.
+          Ще се свържем с теб по имейл{" "}
+          <span className="text-[#074FB5] font-semibold">съвсем скоро</span>.
         </p>
 
         {/* What happens next */}
@@ -74,7 +90,7 @@ export default function ThankYou() {
 
         {/* Social proof */}
         <div className="flex items-center justify-center gap-1 text-sunshine text-2xl mb-4">
-          {'⭐'.repeat(5)}
+          {"⭐".repeat(5)}
         </div>
         <p className="text-sm text-gray-500">
           Присъединяваш се към стотици щастливи семейства!
@@ -83,4 +99,3 @@ export default function ThankYou() {
     </section>
   );
 }
-

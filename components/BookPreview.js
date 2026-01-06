@@ -2,7 +2,10 @@
 
 export default function BookPreview() {
   return (
-    <section className="relative py-16 lg:pt-20 lg:pb-32 bg-white overflow-hidden">
+    <section
+      id="book-preview"
+      className="relative py-16 lg:pt-20 lg:pb-32 bg-white overflow-hidden"
+    >
       <div className="max-w-5xl mx-auto px-6 relative">
         {/* Crayons decoration behind the card */}
         <img

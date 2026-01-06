@@ -8,8 +8,8 @@ export default function OrderForm({ onSubmitSuccess }) {
     child_gender: "",
     child_age: "",
     email: "",
+    phone: "",
     photos: [],
-    intent: "",
   });
   const [dragActive, setDragActive] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,6 +17,15 @@ export default function OrderForm({ onSubmitSuccess }) {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    // Only allow numbers, spaces, +, -, and parentheses
+    const phoneRegex = /^[\d\s\+\-\(\)]*$/;
+    if (phoneRegex.test(value) || value === "") {
+      setFormData((prev) => ({ ...prev, phone: value }));
+    }
   };
 
   const handleFileChange = (e) => {
@@ -61,11 +70,30 @@ export default function OrderForm({ onSubmitSuccess }) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append("child_name", formData.child_name);
+      formDataToSend.append("child_gender", formData.child_gender);
+      formDataToSend.append("child_age", formData.child_age);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("phone", formData.phone);
 
-    setIsSubmitting(false);
-    onSubmitSuccess?.();
+      const response = await fetch("/api/submission", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      onSubmitSuccess?.();
+    } catch (error) {
+      console.error("Submission error:", error);
+      window.alert("There was an error submitting the data. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const intentOptions = [
@@ -74,6 +102,16 @@ export default function OrderForm({ onSubmitSuccess }) {
   ];
 
   const ageOptions = ["3", "4", "5", "6", "7"];
+
+  const isFormValid =
+    formData.child_name.trim() !== "" &&
+    formData.child_gender !== "" &&
+    formData.child_age !== "" &&
+    formData.email.trim() !== "" &&
+    formData.phone.trim() !== "" &&
+    formData.photos.length >= 1;
+
+  console.log(isFormValid);
 
   return (
     <section
@@ -290,64 +328,37 @@ export default function OrderForm({ onSubmitSuccess }) {
               />
             </div>
 
-            {/* Intent selection */}
+            {/* Phone */}
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-3">
-                <span className="mr-2">🎯</span>
-                Какво искаш?
+              <label
+                htmlFor="phone"
+                className="block text-sm font-bold text-gray-700 mb-2 mt-6"
+              >
+                <span className="mr-2">📱</span>
+                Телефон
               </label>
-              <div className="space-y-3">
-                {intentOptions.map((option) => (
-                  <label
-                    key={option.value}
-                    className={`radio-card ${
-                      formData.intent === option.value ? "selected" : ""
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="intent"
-                      value={option.value}
-                      checked={formData.intent === option.value}
-                      onChange={handleInputChange}
-                      className="sr-only"
-                    />
-                    <span className="text-2xl mr-3">{option.icon}</span>
-                    <span className="font-medium text-gray-700">
-                      {option.label}
-                    </span>
-                    <div
-                      className={`ml-auto w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors ${
-                        formData.intent === option.value
-                          ? "bg-[#074FB5]"
-                          : "border-gray-300"
-                      }`}
-                    >
-                      {formData.intent === option.value && (
-                        <svg
-                          className="w-3 h-3 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      )}
-                    </div>
-                  </label>
-                ))}
-              </div>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handlePhoneChange}
+                inputMode="numeric"
+                pattern="[\d\s\+\-\(\)]+"
+                placeholder="+359 888 123 456"
+                className="w-full"
+                required
+              />
             </div>
 
             {/* Submit button */}
             <button
               type="submit"
-              disabled={isSubmitting}
-              className={`w-full btn-primary text-xl py-5 flex items-center justify-center gap-3 ${
-                isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+              disabled={isSubmitting || !isFormValid}
+              className={`w-full btn-primary text-xl py-5 flex items-center justify-center gap-3  ${
+                isSubmitting || !isFormValid
+                  ? "cursor-not-allowed opacity-60 pointer-events-none"
+                  : ""
               }`}
             >
               {isSubmitting ? (

@@ -285,6 +285,7 @@ body {
 
 /* Form styles */
 input[type="text"],
+input[type="tel"],
 input[type="email"],
 select {
   width: 100%;
@@ -298,6 +299,7 @@ select {
 }
 
 input[type="text"]:focus,
+input[type="tel"],
 input[type="email"]:focus,
 select:focus {
   outline: none;

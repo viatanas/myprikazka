@@ -4,8 +4,6 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
-import Differentiator from "@/components/Differentiator";
-import CtaSection from "@/components/CtaSection";
 import OrderForm from "@/components/OrderForm";
 import ThankYou from "@/components/ThankYou";
 import Footer from "@/components/Footer";
@@ -31,8 +29,6 @@ export default function Home() {
         <Hero />
         <HowItWorks />
         <BookPreview />
-        {/* <Differentiator /> */}
-        {/* <CtaSection /> */}
         <OrderForm onSubmitSuccess={handleFormSubmitSuccess} />
         <FAQ />
         <Footer />
