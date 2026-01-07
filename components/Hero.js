@@ -156,7 +156,7 @@ export default function Hero() {
             />
 
             {/* Book Preview Card */}
-            <img src="/img/book-demo.png" className="w-auto relative z-10" />
+            <img src="/img/book-demo.webp" className="w-auto relative z-10" />
           </div>
         </div>
       </div>

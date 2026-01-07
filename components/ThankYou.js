@@ -107,7 +107,7 @@ export default function ThankYou() {
               </div>
               <div className="flex-1 pt-1.5 text-left">
                 <p className="font-medium text-black text-[15px]">
-                  Подготвяме пример на книжката за преглед
+                  Персонализираме и подготвямe книжката за преглед
                 </p>
                 {/* <p className="text-sm text-sunshine font-medium">В процес...</p> */}
               </div>
