@@ -2,6 +2,7 @@ import dbConnect from "@/lib/db/dbConect";
 import Character from "@/lib/models/Character";
 import mongoose from "mongoose";
 import { Resend } from "resend";
+import { after } from "next/server";
 
 import EmailTemplate from "@/components/EmailTemplate";
 
@@ -30,17 +31,19 @@ export async function POST(request) {
       phoneNumber: phone,
     });
 
-    await resend.emails.send({
-      from: "Viktor @ MyPrikazka <info@myprikazka.com>",
-      to: "viktor_atanasov@icloud.com",
-      subject: `📣 Нова заявка за книжка: ${childName}`,
-      react: EmailTemplate({
-        childName,
-        childGender,
-        childAge,
-        email,
-        phone,
-      }),
+    after(async () => {
+      await resend.emails.send({
+        from: "Viktor @ MyPrikazka <info@myprikazka.com>",
+        to: "viktor_atanasov@icloud.com",
+        subject: `📣 Нова заявка за книжка: ${childName}`,
+        react: EmailTemplate({
+          childName,
+          childGender,
+          childAge,
+          email,
+          phone,
+        }),
+      });
     });
 
     return new Response(
