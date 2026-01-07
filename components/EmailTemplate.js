@@ -18,11 +18,31 @@ const EmailTemplate = ({ childName, childGender, childAge, email, phone }) => {
 
   return (
     <Html>
-      <Head />
+      <Head>
+        <style>{`
+          @media only screen and (max-width: 600px) {
+            .container {
+              padding: 20px 0px !important;
+            }
+            .header {
+              padding: 20px !important;
+            }
+            .content {
+              padding: 20px !important;
+            }
+            .footer {
+              padding: 20px !important;
+            }
+            .detailsBox {
+              padding: 12px 16px !important;
+            }
+          }
+        `}</style>
+      </Head>
       <Body style={main}>
-        <Container style={container}>
+        <Container style={container} className="container">
           {/* Header */}
-          <Section style={header}>
+          <Section style={header} className="header">
             <Img
               src="https://myprikazka.com/img/logo.png"
               alt="MyPrikazka"
@@ -32,17 +52,17 @@ const EmailTemplate = ({ childName, childGender, childAge, email, phone }) => {
           </Section>
 
           {/* Body */}
-          <Section style={content}>
+          <Section style={content} className="content">
             <Text style={heading}>Нова заявка за книжка! 📚</Text>
             <Text style={paragraph}>
               Получихме нова заявка за персонализирана книжка. Ето детайлите:
             </Text>
 
             {/* Details Table */}
-            <Section style={detailsBox}>
+            <Section style={detailsBox} className="detailsBox">
               <Row style={tableRow}>
                 <Column style={labelCell}>
-                  <Text style={label}>Име на детето:</Text>
+                  <Text style={label}>Име:</Text>
                 </Column>
                 <Column style={valueCell}>
                   <Text style={value}>{childName}</Text>
@@ -96,7 +116,7 @@ const EmailTemplate = ({ childName, childGender, childAge, email, phone }) => {
           </Section>
 
           {/* Footer */}
-          <Section style={footer}>
+          <Section style={footer} className="footer">
             <Text style={footerText}>
               © {new Date().getFullYear()} MyPrikazka. Всички права запазени.
             </Text>
