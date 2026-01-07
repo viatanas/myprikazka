@@ -6,7 +6,7 @@ export default function BookPreview() {
       id="book-preview"
       className="relative pb-12 pt-0 lg:pt-20 lg:pb-32 bg-white overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto px-6 relative">
+      <div className="max-w-5xl mx-auto px-4 lg:px-6 relative">
         {/* Crayons decoration behind the card */}
         <img
           src="/img/crayons.png"
@@ -56,13 +56,13 @@ export default function BookPreview() {
           </div>
 
           {/* Right side - Text content */}
-          <div className="lg:w-1/2 bg-[#0047AB] px-6 py-10 lg:px-10 lg:py-12 flex flex-col justify-center">
+          <div className="lg:w-1/2 bg-[#0047AB] p-6 lg:px-10 lg:py-12 flex flex-col justify-center">
             <div className="max-w-md">
-              <span className="inline-block px-4 py-2 bg-white text-black rounded-full text-sm font-semibold mb-10">
+              <span className="inline-block px-4 py-2 bg-white text-black rounded-full text-sm font-semibold lg:mb-10 mb-6">
                 За книжката
               </span>
 
-              <h2 className="text-2xl lg:text-4xl font-black text-white leading-tight mb-8">
+              <h2 className="text-2xl lg:text-4xl font-black text-white leading-tight lg:mb-8 mb-5">
                 Тайната на Златната Планина
               </h2>
 
@@ -73,7 +73,7 @@ export default function BookPreview() {
               </p>
 
               {/* Features */}
-              <div className="space-y-2 mb-8">
+              <div className="space-y-2 lg:mb-8">
                 <div className="flex items-center gap-2 text-white text-sm font-medium">
                   <span className="text-base">🎁</span>
                   <span>Най-добра за възраст 3–7 години</span>

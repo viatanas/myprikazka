@@ -36,7 +36,7 @@ export default function HowItWorks() {
       id="how-it-works"
       className="relative py-24 bg-white overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 lg:px-6 relative z-10">
         {/* Section title */}
         <div className="text-center mb-24">
           <span className="inline-block px-4 py-2 bg-[#FFF8F0] text-black border border-neutral-100 rounded-full text-sm font-semibold mb-10">
