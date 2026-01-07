@@ -23,7 +23,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 mt-6 lg:mt-0">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen py-20">
           {/* Left Column - Text Content */}
           <div className="order-2 lg:order-1">
@@ -119,25 +119,25 @@ export default function Hero() {
             <img
               src="/img/streamer.svg"
               alt=""
-              className="absolute top-0 left-0 w-16 md:w-12 opacity-30"
+              className="absolute top-0 left-0 w-8 md:w-12 opacity-30"
               style={{ transform: "rotate(-15deg) translate(-10px, -5px)" }}
             />
             <img
               src="/img/balloon.svg"
               alt=""
-              className="absolute top-0 right-0 w-14 md:w-12 opacity-25"
+              className="absolute top-0 right-0 w-8 md:w-12 opacity-25"
               style={{ transform: "rotate(25deg) translate(10px, -10px)" }}
             />
             <img
               src="/img/hat.svg"
               alt=""
-              className="absolute bottom-0 left-1/4 w-12 md:w-12 opacity-20"
+              className="absolute bottom-0 left-1/4 w-8 md:w-12 opacity-20"
               style={{ transform: "rotate(45deg) translate(-15px, 10px)" }}
             />
             <img
               src="/img/star.svg"
               alt=""
-              className="absolute top-1/3 right-0 w-10 md:w-12 opacity-30"
+              className="absolute top-1/3 right-0 w-8 md:w-12 opacity-30"
               style={{ transform: "rotate(-30deg) translate(5px, 0)" }}
             />
 

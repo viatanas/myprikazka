@@ -140,7 +140,7 @@ export default function OrderForm({ onSubmitSuccess }) {
         <img className="w-8" src="/img/smiley.png" />
       </div>
 
-      <div className="max-w-2xl mx-auto px-6 relative z-10">
+      <div className="max-w-2xl mx-auto px-4 lg:px-6 relative z-10">
         {/* Section header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#074FB5]/10 rounded-full border border-blue-900/10 text-[#074FB5] font-semibold text-sm mb-4">
@@ -223,7 +223,7 @@ export default function OrderForm({ onSubmitSuccess }) {
                 className="block text-sm font-bold text-gray-700 mb-2"
               >
                 <span className="mr-2">🎂</span>
-                Възраст
+                Възраст (години)
               </label>
               <div className="flex gap-3 flex-wrap">
                 {ageOptions.map((age) => (
@@ -233,7 +233,7 @@ export default function OrderForm({ onSubmitSuccess }) {
                     onClick={() =>
                       setFormData((prev) => ({ ...prev, child_age: age }))
                     }
-                    className={`w-14 h-14 rounded-2xl font-bold text-lg transition-all duration-300 ${
+                    className={`lg:w-14 lg:h-14 h-12 w-12 rounded-2xl font-bold text-lg transition-all duration-300 ${
                       formData.child_age === age
                         ? "bg-[#074FB5] text-white   scale-110"
                         : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -242,9 +242,9 @@ export default function OrderForm({ onSubmitSuccess }) {
                     {age}
                   </button>
                 ))}
-                <span className="flex items-center text-gray-400 text-sm ml-2">
-                  години
-                </span>
+                {/* <span className="flex items-center text-gray-400 lg:text-sm text-[13px]] ml-2">
+                    години
+                  </span> */}
               </div>
             </div>
 

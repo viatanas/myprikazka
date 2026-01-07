@@ -44,7 +44,7 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="relative py-24 bg-white overflow-hidden">
-      <div className="max-w-3xl mx-auto px-6 relative z-10">
+      <div className="max-w-3xl mx-auto lg:px-6 px-4 relative z-10">
         {/* Section header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#074FB5]/10 rounded-full border border-blue-900/10 text-[#074FB5] font-semibold text-sm mb-4">
@@ -53,7 +53,7 @@ export default function FAQ() {
           <h2 className="text-3xl md:text-4xl font-black text-gray-800 mb-4">
             Често задавани въпроси
           </h2>
-          <p className="text-lg text-neutral-800">
+          <p className="w-11/12 mx-auto lg:w-full text-lg text-neutral-800">
             Всичко, което искаш да знаеш за магическите книжки
           </p>
         </div>

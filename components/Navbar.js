@@ -44,7 +44,7 @@ export default function Navbar() {
             }}
             className="flex items-center gap-2 group"
           >
-            <img src="/img/logo.png" className="w-32" />
+            <img src="/img/logo.png" className="w-28 lg:w-32" />
           </a>
 
           {/* Desktop Navigation */}
@@ -104,30 +104,68 @@ export default function Navbar() {
             )}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            isMobileMenuOpen ? "max-h-64 pb-6" : "max-h-0"
-          }`}
-        >
-          <div className="flex flex-col gap-4 pt-4 border-t border-gray-100">
+      {/* Mobile Menu - Dropdown */}
+      <div
+        className={`md:hidden fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-lg border-b border-gray-100 transition-all duration-300 overflow-hidden rounded-b-3xl ${
+          isMobileMenuOpen ? "max-h-[450px] shadow-lg" : "max-h-0"
+        }`}
+      >
+        <div className="px-6 py-5">
+          {/* Header with logo and close button */}
+          <div className="flex items-center justify-between mb-6">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              <img src="/img/logo.png" className="w-28" alt="Logo" />
+            </a>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 text-gray-800 hover:text-gray-600 transition-colors"
+              aria-label="Close menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="flex flex-col gap-5 mb-8">
             {navLinks.map((link) => (
               <button
                 key={link.sectionId}
                 onClick={() => scrollToSection(link.sectionId)}
-                className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-left"
+                className="text-gray-900 font-semibold text-sm tracking-wide uppercase text-left hover:text-[#074FB5] transition-colors"
               >
                 {link.label}
               </button>
             ))}
-            <button
-              onClick={() => scrollToSection("order-form")}
-              className="bg-[#074FB5] hover:bg-[#074FB5]/90 text-white font-semibold px-5 py-2.5 rounded-full transition-all duration-200 w-full mt-2"
-            >
-              Започни сега
-            </button>
           </div>
+
+          {/* CTA Button */}
+          <button
+            onClick={() => scrollToSection("order-form")}
+            className="w-full bg-[#074FB5] hover:bg-[#074FB5]/90 text-white font-bold text-lg px-10 py-3 rounded-full transition-all duration-200"
+          >
+            Създай книжка
+          </button>
         </div>
       </div>
     </nav>
