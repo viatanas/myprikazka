@@ -31,11 +31,11 @@ export default function ThankYou() {
         <img className="w-8" src="/img/smiley.png" />
       </div>
 
-      <div className="relative z-10 max-w-xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-lg mx-auto px-6 text-center">
         {/* Success animation */}
         <div className="mb-8">
           <div className="w-32 h-32 mx-auto bg-mint/20 rounded-full flex items-center justify-center">
-            <div className="w-24 h-24 bg-mint rounded-full flex items-center justify-center shadow-lg">
+            <div className="w-24 h-24 bg-green-600 rounded-full flex items-center justify-center shadow-lg">
               <svg
                 className="w-12 h-12 text-white"
                 fill="none"
@@ -64,26 +64,80 @@ export default function ThankYou() {
           ще получиш пример по имейл.
         </p>
 
-        {/* What happens next */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-soft mb-8">
-          <h3 className="font-bold text-gray-800 mb-4 flex items-center justify-center gap-2">
-            <span>📋</span>
-            Какво следва?
+        {/* Step Progress Tracker */}
+        <div className="bg-white/80 w-11/12 backdrop-blur-sm rounded-2xl mx-auto p-8 shadow-soft mb-8">
+          <h3 className="font-bold text-gray-800 mb-7 text-base text-left">
+            Твоята поръчка
           </h3>
-          <ul className="w-full flex flex-col items-start text-gray-600 space-y-3">
-            <li className="flex items-start gap-3 w-full text-left">
-              <span className="text-mint mt-0.5 flex-shrink-0">✓</span>
-              <span>Получихме информацията ти успешно</span>
-            </li>
-            <li className="flex items-start gap-3 w-full text-left">
-              <span className="text-mint mt-0.5 flex-shrink-0">✓</span>
-              <span>Ще създадем пример на приказката специално за детето</span>
-            </li>
-            <li className="flex items-start gap-3 w-full text-left">
-              <span className="text-mint mt-0.5 flex-shrink-0">✓</span>
-              <span>Ще ти го изпратим по имейл преди печат</span>
-            </li>
-          </ul>
+
+          <div className="relative">
+            {/* Progress Line */}
+            <div className="absolute left-[19px] top-[40px] w-0.5 h-[calc(100%-80px)] bg-gray-200" />
+            <div className="absolute left-[19px] top-[40px] w-0.5 h-[50px] bg-green-600" />
+
+            {/* Step 1 - Completed */}
+            <div className="relative flex items-start gap-4 mb-5">
+              <div className="relative z-10 w-10 h-10 rounded-full bg-green-600 flex items-center justify-center shadow-sm flex-shrink-0">
+                <svg
+                  className="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={3}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div className="flex-1 pt-1.5 text-left">
+                <p className="font-medium text-black text-[15px]">
+                  Формата е попълнена успешно
+                </p>
+                {/* <p className="text-sm text-mint font-medium">Завършено</p> */}
+              </div>
+            </div>
+
+            {/* Step 2 - In Progress */}
+            <div className="relative flex items-start gap-4 mb-5">
+              <div className="relative z-10 w-10 h-10 rounded-full bg-white border border-neutral-200 flex items-center justify-center shadow-sm flex-shrink-0 ring-3 ring-sunshine/30">
+                <div className="w-2.5 h-2.5 bg-neutral-900 rounded-full animate-pulse" />
+              </div>
+              <div className="flex-1 pt-1.5 text-left">
+                <p className="font-medium text-black text-[15px]">
+                  Подготвяме пример на книжката за преглед
+                </p>
+                {/* <p className="text-sm text-sunshine font-medium">В процес...</p> */}
+              </div>
+            </div>
+
+            {/* Step 3 - Pending */}
+            <div className="relative flex items-start gap-4">
+              <div className="relative z-10 w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
+                <svg
+                  className="w-5 h-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+                  />
+                </svg>
+              </div>
+              <div className="flex-1 pt-1.5 text-left">
+                <p className="font-medium text-gray-500 text-[15px]">
+                  Печат и доставка при поръчка
+                </p>
+                {/* <p className="text-sm text-gray-400">Очаква</p> */}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

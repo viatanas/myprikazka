@@ -2,7 +2,8 @@ import dbConnect from "@/lib/db/dbConect";
 import Character from "@/lib/models/Character";
 import mongoose from "mongoose";
 import { Resend } from "resend";
-import { after } from "next/server";
+
+import EmailTemplate from "@/components/EmailTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -29,14 +30,18 @@ export async function POST(request) {
       phoneNumber: phone,
     });
 
-    // after(async () => {
-    //   resend.emails.send({
-    //     from: "dreamstimebg@gmail.com",
-    //     to: "viktor_atanasov@icloud.com",
-    //     subject: "Hello World",
-    //     html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
-    //   });
-    // });
+    await resend.emails.send({
+      from: "info@myprikazka.com",
+      to: "viktor_atanasov@icloud.com",
+      subject: `Нова заявка за книжка: ${childName}`,
+      react: EmailTemplate({
+        childName,
+        childGender,
+        childAge,
+        email,
+        phone,
+      }),
+    });
 
     return new Response(
       JSON.stringify({ characterId: character._id.toString() }),

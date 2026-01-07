@@ -88,7 +88,7 @@ export default function OrderForm({ onSubmitSuccess }) {
       }
 
       // Add 1 second delay before showing success
-      await new Promise((resolve) => setTimeout(resolve, 2500));
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       onSubmitSuccess?.();
     } catch (error) {
@@ -120,23 +120,23 @@ export default function OrderForm({ onSubmitSuccess }) {
       className="relative py-24 bg-[#F8F5EE] overflow-hidden"
     >
       {/* Floating decorations */}
-      <div className="absolute top-32 right-10 text-4xl animate-float opacity-70">
+      <div className="absolute top-32 right-10 text-4xl opacity-70">
         <img className="w-9" src="/img/smiley.png" />
       </div>
-      <div className="absolute top-96 right-24 text-4xl animate-float opacity-70">
+      <div className="absolute top-96 right-24 text-4xl  opacity-70">
         <img className="w-9" src="/img/star.png" />
       </div>
-      <div className="absolute top-64 right-40 text-4xl animate-float opacity-70">
+      <div className="absolute top-64 right-40 text-4xl  opacity-70">
         <img className="w-9" src="/img/smiley.png" />
       </div>
 
-      <div className="absolute bottom-32 left-10 text-3xl animate-float animation-delay-2000 opacity-70">
+      <div className="absolute bottom-32 left-10 text-3xl  opacity-70">
         <img className="w-9" src="/img/star.png" />
       </div>
-      <div className="absolute bottom-96 left-24 text-3xl animate-float animation-delay-2000 opacity-70">
+      <div className="absolute bottom-96 left-24 text-3xl  opacity-70">
         <img className="w-9" src="/img/star.png" />
       </div>
-      <div className="absolute bottom-64 left-40 text-3xl animate-float animation-delay-2000 opacity-70">
+      <div className="absolute bottom-64 left-40 text-3xl  opacity-70">
         <img className="w-8" src="/img/smiley.png" />
       </div>
 
