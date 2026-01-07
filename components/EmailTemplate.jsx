@@ -1,3 +1,4 @@
+import * as React from "react";
 import {
   Html,
   Head,
@@ -11,7 +12,6 @@ import {
   Link,
   Hr,
 } from "@react-email/components";
-import * as React from "react";
 
 const EmailTemplate = ({ childName, childGender, childAge, email, phone }) => {
   const genderText = childGender === "boy" ? "момче" : "момиче";
