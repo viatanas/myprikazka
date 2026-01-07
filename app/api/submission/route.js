@@ -31,9 +31,9 @@ export async function POST(request) {
     });
 
     await resend.emails.send({
-      from: "info@myprikazka.com",
+      from: "Viktor @ MyPrikazka <info@myprikazka.com>",
       to: "viktor_atanasov@icloud.com",
-      subject: `Нова заявка за книжка: ${childName}`,
+      subject: `📣 Нова заявка за книжка: ${childName}`,
       react: EmailTemplate({
         childName,
         childGender,
