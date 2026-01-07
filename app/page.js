@@ -11,7 +11,7 @@ import FAQ from "@/components/FAQ";
 import BookPreview from "@/components/BookPreview";
 
 export default function Home() {
-  const [showThankYou, setShowThankYou] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(true);
 
   const handleFormSubmitSuccess = () => {
     setShowThankYou(true);

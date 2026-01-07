@@ -11,23 +11,23 @@ export default function ThankYou() {
       </div>
 
       {/* Floating decorations */}
-      <div className="absolute top-32 right-10 text-4xl  opacity-70">
+      <div className="absolute hidden lg:flex top-32 right-10 text-4xl  opacity-70">
         <img className="w-9" src="/img/smiley.png" />
       </div>
-      <div className="absolute top-96 right-24 text-4xl  opacity-70">
+      <div className="absolute hidden lg:flex top-6 right-24 text-4xl  opacity-70">
         <img className="w-9" src="/img/star.png" />
       </div>
-      <div className="absolute top-64 right-40 text-4xl opacity-70">
+      <div className="absolute hidden lg:flex top-20 right-40 text-4xl opacity-70">
         <img className="w-9" src="/img/smiley.png" />
       </div>
 
       <div className="absolute bottom-32 left-10 text-3xl   opacity-70">
         <img className="w-9" src="/img/star.png" />
       </div>
-      <div className="absolute bottom-96 left-24 text-3xl   opacity-70">
+      <div className="absolute bottom-40 left-64 text-3xl   opacity-70">
         <img className="w-9" src="/img/star.png" />
       </div>
-      <div className="absolute bottom-64 left-40 text-3xl  opacity-70">
+      <div className="absolute bottom-10 left-40 text-3xl  opacity-70">
         <img className="w-8" src="/img/smiley.png" />
       </div>
 
@@ -70,17 +70,17 @@ export default function ThankYou() {
             <span>📋</span>
             Какво следва?
           </h3>
-          <ul className="w-full flex flex-col items-center text-gray-600 space-y-3">
-            <li className="flex items-start gap-3">
-              <span className="text-mint mt-0.5">✓</span>
+          <ul className="w-full flex flex-col items-start text-gray-600 space-y-3">
+            <li className="flex items-start gap-3 w-full text-left">
+              <span className="text-mint mt-0.5 flex-shrink-0">✓</span>
               <span>Получихме информацията ти успешно</span>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="text-mint mt-0.5">✓</span>
+            <li className="flex items-start gap-3 w-full text-left">
+              <span className="text-mint mt-0.5 flex-shrink-0">✓</span>
               <span>Ще създадем пример на приказката специално за детето</span>
             </li>
-            <li className="flex items-start gap-3">
-              <span className="text-mint mt-0.5">✓</span>
+            <li className="flex items-start gap-3 w-full text-left">
+              <span className="text-mint mt-0.5 flex-shrink-0">✓</span>
               <span>Ще ти го изпратим по имейл преди печат</span>
             </li>
           </ul>
