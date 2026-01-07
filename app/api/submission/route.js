@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import { Resend } from "resend";
 import { after } from "next/server";
 
-const resend = new Resend("re_WAstFQKP_6F6rZiRxk5LfbLcrswBSVps6");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   try {

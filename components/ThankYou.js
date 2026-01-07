@@ -31,9 +31,9 @@ export default function ThankYou() {
         <img className="w-8" src="/img/smiley.png" />
       </div>
 
-      <div className="relative z-10 max-w-lg mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-xl mx-auto px-6 text-center">
         {/* Success animation */}
-        <div className="mb-8 animate-bounce-gentle">
+        <div className="mb-8">
           <div className="w-32 h-32 mx-auto bg-mint/20 rounded-full flex items-center justify-center">
             <div className="w-24 h-24 bg-mint rounded-full flex items-center justify-center shadow-lg">
               <svg
@@ -55,15 +55,13 @@ export default function ThankYou() {
 
         {/* Headline */}
         <h1 className="text-4xl md:text-5xl font-black text-gray-800 mb-6">
-          Благодарим ти! 🎉
+          Благодарим ти!
         </h1>
 
         {/* Message */}
         <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-          В момента подготвяме първите персонализирани книжки.
-          <br className="hidden md:block" />
-          Ще се свържем с теб по имейл{" "}
-          <span className="text-[#074FB5] font-semibold">съвсем скоро</span>.
+          Получихме информацията ти и започваме създаването на приказката. Скоро
+          ще получиш пример по имейл.
         </p>
 
         {/* What happens next */}
@@ -72,29 +70,21 @@ export default function ThankYou() {
             <span>📋</span>
             Какво следва?
           </h3>
-          <ul className="text-left text-gray-600 space-y-3">
+          <ul className="w-full flex flex-col items-center text-gray-600 space-y-3">
             <li className="flex items-start gap-3">
               <span className="text-mint mt-0.5">✓</span>
-              <span>Ще получиш имейл с потвърждение</span>
+              <span>Получихме информацията ти успешно</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-mint mt-0.5">✓</span>
-              <span>Екипът ни ще създаде уникална история</span>
+              <span>Ще създадем пример на приказката специално за детето</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-mint mt-0.5">✓</span>
-              <span>Ще се свържем преди отпечатване</span>
+              <span>Ще ти го изпратим по имейл преди печат</span>
             </li>
           </ul>
         </div>
-
-        {/* Social proof */}
-        <div className="flex items-center justify-center gap-1 text-sunshine text-2xl mb-4">
-          {"⭐".repeat(5)}
-        </div>
-        <p className="text-sm text-gray-500">
-          Присъединяваш се към стотици щастливи семейства!
-        </p>
       </div>
     </section>
   );

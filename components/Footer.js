@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full">
             <span className="text-xl">📧</span>
             <span className="text-gray-300 text-sm">
-              Само имейл при новини около старта
+              Виждаш пример преди поръчка
             </span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full">

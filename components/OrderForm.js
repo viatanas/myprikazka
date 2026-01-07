@@ -87,6 +87,9 @@ export default function OrderForm({ onSubmitSuccess }) {
         throw new Error("Failed to submit form");
       }
 
+      // Add 1 second delay before showing success
+      await new Promise((resolve) => setTimeout(resolve, 2500));
+
       onSubmitSuccess?.();
     } catch (error) {
       console.error("Submission error:", error);
@@ -110,8 +113,6 @@ export default function OrderForm({ onSubmitSuccess }) {
     formData.email.trim() !== "" &&
     formData.phone.trim() !== "" &&
     formData.photos.length >= 1;
-
-  console.log(isFormValid);
 
   return (
     <section
@@ -163,7 +164,7 @@ export default function OrderForm({ onSubmitSuccess }) {
                 className="block text-sm font-bold text-gray-700 mb-2"
               >
                 <span className="mr-2">👶</span>
-                Име на детето
+                Първото име на детето
               </label>
               <input
                 type="text"
@@ -274,7 +275,7 @@ export default function OrderForm({ onSubmitSuccess }) {
                 <div className="text-center">
                   <div className="text-4xl mb-3">📷</div>
                   <p className="text-gray-600 font-medium mb-1">
-                    Плъзни снимки тук или кликни
+                    Качи снимки тук или кликни
                   </p>
                   <p className="text-gray-400 text-sm">
                     PNG, JPG до 10MB • Макс. 3 снимки
@@ -322,7 +323,7 @@ export default function OrderForm({ onSubmitSuccess }) {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                placeholder="tvoiat@email.com"
+                placeholder="prikazka@abv.bg"
                 className="w-full"
                 required
               />
@@ -345,7 +346,7 @@ export default function OrderForm({ onSubmitSuccess }) {
                 onChange={handlePhoneChange}
                 inputMode="numeric"
                 pattern="[\d\s\+\-\(\)]+"
-                placeholder="+359 888 123 456"
+                placeholder="0888123456"
                 className="w-full"
                 required
               />
@@ -383,7 +384,7 @@ export default function OrderForm({ onSubmitSuccess }) {
                 </>
               ) : (
                 <>
-                  <span>Поръчай</span>
+                  <span>Създай</span>
                   <svg
                     className="w-5 h-5"
                     fill="none"

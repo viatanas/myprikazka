@@ -30,9 +30,9 @@ export default function Hero() {
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold  mb-6">
               <span className="text-black leading-[1.1]">
-                Детска книжка, в която лицето на твоето{" "}
+                Създайте приказка, в която детето ви е
                 <span className="relative inline-block">
-                  дете е героят!
+                  главният герой!
                   <img
                     src="/img/crayon-underline.png"
                     alt=""
@@ -56,14 +56,14 @@ export default function Hero() {
                 onClick={scrollToOrderForm}
                 className="inline-flex items-center justify-center gap-2 bg-[#074FB5] hover:bg-[#074FB5]/90 text-white font-bold text-lg px-10 py-3 rounded-full"
               >
-                <span>Поръчай книжка</span>
+                <span>Създай книжка</span>
               </button>
-              <button
+              {/* <button
                 onClick={scrollToExample}
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-semibold text-lg px-10 py-3 rounded-full border border-gray-200 hover:border-gray-300 transition-all duration-200"
               >
                 <span>Виж пример</span>
-              </button>
+              </button> */}
             </div>
 
             {/* Trust indicators */}
