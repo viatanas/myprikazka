@@ -63,7 +63,7 @@ export default function Navbar() {
               onClick={() => scrollToSection("order-form")}
               className="bg-[#074FB5] hover:bg-[#074FB5]/90 text-white font-bold px-5 py-2.5 rounded-full"
             >
-              Създай книжка
+              Създай книжка - €34.99
             </button>
           </div>
 
@@ -164,7 +164,7 @@ export default function Navbar() {
             onClick={() => scrollToSection("order-form")}
             className="w-full bg-[#074FB5] hover:bg-[#074FB5]/90 text-white font-bold text-lg px-10 py-3 rounded-full transition-all duration-200"
           >
-            Създай книжка
+            Създай книжка - €34.99
           </button>
         </div>
       </div>

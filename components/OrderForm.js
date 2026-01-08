@@ -150,7 +150,7 @@ export default function OrderForm({ onSubmitSuccess }) {
             Създай книжка
           </h2>
           <p className="text-lg text-neutral-800">
-            Попълни формата и започни магията
+            Създай книжката и я виж преди поръчка
           </p>
         </div>
 

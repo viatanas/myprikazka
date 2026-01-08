@@ -56,7 +56,7 @@ export default function Hero() {
                 onClick={scrollToOrderForm}
                 className="inline-flex items-center justify-center gap-2 bg-[#074FB5] hover:bg-[#074FB5]/90 text-white font-bold text-lg px-10 py-3 rounded-full"
               >
-                <span>Създай книжка</span>
+                <span>Създай книжка - €34.99</span>
               </button>
               {/* <button
                 onClick={scrollToExample}

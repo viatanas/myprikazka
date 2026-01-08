@@ -115,7 +115,7 @@ export default function FAQ() {
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4">Не намери отговор на въпроса си?</p>
           <a
-            href="mailto:hello@storybook.bg"
+            href="mailto:info@myprikazka.com"
             className="inline-flex items-center gap-2 text-[#074FB5] font-bold hover:underline"
           >
             <span>Пиши ни на имейл</span>
