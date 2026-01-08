@@ -117,7 +117,7 @@ export default function ThankYouPage() {
                 </div>
                 <div className="flex-1 pt-1.5 text-left">
                   <p className="font-medium text-black text-[15px]">
-                    Персонализираме и подготвямe книжката за преглед
+                    Подготвямe книжката за преглед
                   </p>
                 </div>
               </div>
