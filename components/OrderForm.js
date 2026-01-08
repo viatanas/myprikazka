@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-export default function OrderForm({ onSubmitSuccess }) {
+export default function OrderForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     child_name: "",
     child_gender: "",
@@ -87,10 +89,10 @@ export default function OrderForm({ onSubmitSuccess }) {
         throw new Error("Failed to submit form");
       }
 
-      // Add 1 second delay before showing success
+      // Add 1 second delay before redirecting
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      onSubmitSuccess?.();
+      router.push("/thank-you");
     } catch (error) {
       console.error("Submission error:", error);
       window.alert("There was an error submitting the data. Please try again.");
